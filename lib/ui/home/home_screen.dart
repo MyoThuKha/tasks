@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:tasks/ui/home/mac/home_screen_mac.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,6 +13,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    if (Platform.isMacOS){
+      return HomeScreenMac();
+    }
+
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(12),
